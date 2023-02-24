@@ -10,8 +10,110 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <div class="container"></div>
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <div class="header__logo">
+              <a class="header__logo-link" href="index.html">
+                <span class="visually-hidden">Переход на главную страницу</span>
+                <img src="img/svg/logo.svg" width="213" height="50" alt="Логотип">
+              </a>
+              <strong class="header__logo-slogan">Ремонтируем двигатели<br>Hyundai и&nbsp;Kia с&nbsp;2012 года</strong>
+            </div>
+
+            <div class="header__call">
+              <b class="header__call-note">Звоните Пн-Сб 10:00&nbsp;&mdash;&nbsp;21:00</b>
+              <a class="header__call-link" href="tel:79251033330">+7 (925) 103 33 30</a>
+              <button class="header__call-button header__button" type="button">
+                <span>Заказать звонок</span>
+              </button>
+            </div>
+
+            <button class="header__menu-button" type="button" aria-label="Открыть/закрыть меню">
+              <svg width="15" height="14">
+                <use xlink:href="img/sprite_auto.svg#menu"></use>
+              </svg>
+            </button>
+
+            <nav class="header__nav nav">
+              <ul class="nav__list">
+                <li class="nav__item nav__item--main">
+                  <a href="#" class="nav__link">Главная</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Услуги</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">модели двигателей</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">отзывы</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">стоимость</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">примеры работ</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">полезные статьи</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">о компании</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="header__help">
+              <div class="header__location">
+                <address class="header__location-address">Адрес автоцентра: <span>Москва,</span><br><strong>Шоссейный проезд, с4&nbsp;а/2</strong></address>
+                <div class="header__location-button">
+                  <button class="header__button" type="button">
+                    <span>Смотреть на карте</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="header__price">
+                <button class="header__button" type="button">
+                  <span>
+                    Рассчитать стоимость ремонта <b>за&nbsp;45&nbsp;сек</b>
+                  </span>
+                </button>
+              </div>
+
+              <div class="header__ask">
+                <p class="header__ask-note">Задайте вопрос, мы сейчас онлайн</p>
+                <ul class="header__ask-buttons">
+                  <li class="header__ask-button">
+                    <a href="#" aria-label="Написать в Whatsapp">
+                      <svg width="35" height="35" aria-hidden="true">
+                        <use xlink:href="img/sprite_auto.svg#whatsapp"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__ask-button">
+                    <a href="#" aria-label="Написать в Telegram">
+                      <svg width="35" height="35" aria-hidden="true">
+                        <use xlink:href="img/sprite_auto.svg#tg"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__ask-button header__ask-button--hidden">
+                    <a href="#" aria-label="Написать в Viber">
+                      <svg width="35" height="35" aria-hidden="true">
+                        <use xlink:href="img/sprite_auto.svg#viber"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
       <main>
         <section class="intro">
