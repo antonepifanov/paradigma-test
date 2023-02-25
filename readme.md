@@ -1,4 +1,4 @@
-[Вот так]() реализовано в сети
+[Вот так](https://antonepifanov.github.io/paradigma-test/) реализовано в сети
 
 
 ```
