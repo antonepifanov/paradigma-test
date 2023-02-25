@@ -1,6 +1,12 @@
 .nav {
   padding: size-desktop(22px) 0;
   border-top: size-desktop(1px) solid rgba($color-nero, 0.15);
+
+  @include vp-991 {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: none;
+  }
 }
 
 .nav__list {
@@ -10,6 +16,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include vp-991 {
+    flex-direction: column;
+    row-gap: size(28px);
+    align-items: flex-start;
+    margin-bottom: size(7px);
+  }
 }
 
 .nav__item {
@@ -25,6 +38,12 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: opacity $trans-default;
+
+  @include vp-991 {
+    font-size: size(16px);
+    font-weight: 400;
+    line-height: size(22px);
+  }
 
   &:hover,
   &:focus-visible {

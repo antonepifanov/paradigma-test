@@ -1,0 +1,67 @@
+.scroll {
+  position: absolute;
+  left: size-desktop(55px);
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: size-desktop(38px);
+
+  @include vp-991 {
+    display: none;
+  }
+}
+
+.scroll__note {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: size-desktop(16px);
+  font-weight: 700;
+  line-height: size-desktop(25px);
+  letter-spacing: 0.1em;
+  color: $color-white-smoke;
+  display: flex;
+  align-items: center;
+  column-gap: size-desktop(38px);
+
+  &::before {
+    content: '';
+    width: size-desktop(1px);
+    height: size-desktop(488px);
+    background-color: $color-white-smoke;
+  }
+}
+.scroll__button {
+  position: relative;
+  background-color: $color-transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: size-desktop(10px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: size-desktop(4px);
+    height: size-desktop(4px);
+    border-radius: 50%;
+    border: size-desktop(1px) solid $color-scarlet;
+    animation: spin 1s infinite linear;
+  }
+
+  svg {
+    width: size-desktop(18px);
+    height: size-desktop(32px);
+  }
+}
+
+@keyframes spin {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 100%);
+  }
+}

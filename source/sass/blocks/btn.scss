@@ -1,29 +1,65 @@
 .btn {
   display: inline-flex;
-  margin: 10px 0;
-  padding: 10px 20px;
-
+  align-items: center;
+  justify-content: space-between;
+  width: size-desktop(400px);
+  height: size-desktop(100px);
+  border-radius: size-desktop(500px);
+  font-size: size-desktop(16px);
+  font-weight: 600;
+  line-height: size-desktop(25px);
+  letter-spacing: 0.05em;
+  text-align: center;
   color: $color-default-white;
-
-  background-color: $color-neon-blue;
   border: none;
   cursor: pointer;
-
   transition: opacity $trans-default;
 
   &--red {
-    background-color: $color-torch-red;
+    background-color: $color-scarlet;
+    padding: 0 size-desktop(55px);
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus-visible {
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      width: size-desktop(23px);
+      height: size-desktop(23px);
+      background-image: url("../img/svg/arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      flex-shrink: 0;
+      transition: transform $trans-default;
+      transform-origin: center center;
+    }
   }
 
-  &:disabled {
-    opacity: 0.5;
+  &--black {
+    background-color: rgba($color-default-black, 0.45);
+    padding: 0 size-desktop(32px);
+    border: size-desktop(1px) solid $color-default-white;
 
-    pointer-events: none;
+    &::before {
+      content: "";
+      width: size-desktop(30px);
+      height: size-desktop(30px);
+      background-image: url("../img/svg/whatsapp-button.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      flex-shrink: 0;
+    }
   }
 
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
-    &:focus {
+    &:focus-visible {
       opacity: 0.8;
     }
   }

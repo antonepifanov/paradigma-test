@@ -38,10 +38,10 @@
     align-items: center;
     width: 100%;
     min-height: 100%;
-    padding: 60px 40px;
+    padding: size-desktop(60px) size-desktop(40px);
 
-    @include vp-767 {
-      padding: 60px 16px;
+    @include vp-991 {
+      padding: size(60px) size(40px);
     }
   }
 
@@ -58,31 +58,233 @@
 
   &__content {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    width: size-desktop(500px);
+    padding: size-desktop(45px) size-desktop(68px) size-desktop(75px);
+    color: $color-default-white;
+    background-color: #202020;
 
-    width: 600px;
-    padding: 40px;
+    @include vp-991 {
+      width: size(300px);
+      padding: size(40px) size(20px);
+    }
 
-    background-color: $color-default-white;
+    .modal__title {
+      margin: 0;
+      font-size: size-desktop(32px);
+      font-weight: 500;
+      line-height: size-desktop(44px);
+      text-align: center;
+      margin-bottom: size-desktop(16px);
 
-    @include vp-767 {
+      @include vp-991 {
+        font-size: size(32px);
+        line-height: size(44px);
+        margin-bottom: size(16px);
+      }
+    }
+
+    .modal__note {
+      font-size: size-desktop(18px);
+      line-height: size-desktop(28px);
+      text-align: center;
+      margin-bottom: size-desktop(34px);
+
+      @include vp-991 {
+        font-size: size(18px);
+        line-height: size(28px);
+        margin-bottom: size(34px);
+      }
+    }
+
+    .modal__form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      row-gap: size-desktop(25px);
+
+      @include vp-991 {
+        font-size: size(18px);
+        line-height: size(28px);
+        margin-bottom: size(34px);
+      }
+
+      label {
+        font-size: size-desktop(14px);
+        line-height: size-desktop(19px);
+
+        @include vp-991 {
+          font-size: size(14px);
+          line-height: size(19px);
+        }
+      }
+    }
+
+    .modal__form-item {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: size-desktop(12px);
+        padding-left: size-desktop(47px);
+
+        @include vp-991 {
+          margin-bottom: size(12px);
+          padding-left: 0;
+        }
+      }
+
+      input {
+        padding: size-desktop(28px) size-desktop(47px);
+        border-radius: size-desktop(73px);
+        font-size: size-desktop(18px);
+        font-weight: 400;
+        line-height: size-desktop(24px);
+        letter-spacing: 0.03em;
+        color: $color-default-black;
+
+        @include vp-991 {
+          padding: size(10px) size(15px);
+          border-radius: size(73px);
+          font-size: size(18px);
+          line-height: size(24px);
+        }
+
+        &::placeholder {
+          font-size: size-desktop(18px);
+          font-weight: 400;
+          line-height: size-desktop(24px);
+          letter-spacing: 0.03em;
+          color: #b0b0b1;
+
+          @include vp-991 {
+            font-size: size(18px);
+            line-height: size(24px);
+          }
+        }
+      }
+    }
+
+    .modal__form-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      padding: 20px;
+      height: size-desktop(85px);
+      border-radius: size-desktop(500px);
+      font-size: size-desktop(16px);
+      font-weight: 600;
+      line-height: size-desktop(24px);
+      letter-spacing: 0.04em;
+      text-align: center;
+      color: $color-default-white;
+      border: none;
+      cursor: pointer;
+      transition: opacity $trans-default;
+      background-color: $color-scarlet;
+      padding: 0 size-desktop(40px);
+
+      @include vp-991 {
+        height: size(45px);
+        border-radius: size(500px);
+        font-size: size(16px);
+        line-height: size(24px);
+        padding: 0 size(15px);
+      }
+
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus-visible {
+          &::after {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    .modal__form-checkbox {
+      input:checked + label::before {
+        background-image: url("../img/svg/checkbox.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      label {
+        display: flex;
+        gap: size-desktop(14px);
+        align-items: center;
+
+        @include vp-991 {
+          gap: size(14px);
+        }
+
+        &::before {
+          content: "";
+          width: size-desktop(20px);
+          height: size-desktop(20px);
+          background-color: $color-scarlet;
+          border-radius: size-desktop(5px);
+          flex-shrink: 0;
+
+          @include vp-991 {
+            width: size(20px);
+            height: size(20px);
+            border-radius: size(5px);
+          }
+        }
+      }
+
+      a {
+        color: $color-scarlet;
+        transition: opacity $trans-default;
+
+        @media (hover: hover), screen and (min-width: 0\0) {
+          &:hover,
+          &:focus-visible {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+    .modal__form-success {
+      margin: 0;
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      place-items: center;
+      background-color: $color-default-white;
+      min-height: 100%;
+      border-radius: size(20px);
+      color: $color-default-black;
     }
   }
 
   &__close-btn {
     position: absolute;
-    top: 22px;
-    right: 22px;
+    top: size-desktop(35px);
+    right: size-desktop(35px);
     z-index: 1;
 
-    width: 40px;
-    height: 40px;
+    width: size-desktop(20px);
+    height: size-desktop(20px);
     padding: 0;
+    color: $color-default-white;
 
     background: $color-transparent;
     border: none;
     cursor: pointer;
+
+    @include vp-991 {
+      top: size(35px);
+      right: size(35px);
+      width: size(20px);
+      height: size(20px);
+    }
   }
 
   &--responsive {
@@ -94,10 +296,6 @@
   &--fit-content {
     .modal__content {
       width: auto;
-
-      @include vp-767 {
-        width: 100%;
-      }
     }
   }
 
